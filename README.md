@@ -1,2 +1,2 @@
 # lintcode
-lintcode相关题目刷题记录
+lintcode相关题目
