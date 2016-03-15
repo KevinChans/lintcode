@@ -8,9 +8,9 @@ package com.lint.code.string._426;
  */
 public class ClientTest {
     public static void main(String[] args){
-        IPSolution solution = new IPSolution();
+        Solution solution = new Solution();
         String inputString = "25525511135";
-        solution.addDDDot(inputString, "", 3);
+        solution.restoreIpAddresses(inputString);
         solution.printResult();
     }
 }
