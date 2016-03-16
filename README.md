@@ -1,9 +1,9 @@
 # LintCode
 推荐大家一个刷题的网站http://www.lintcode.com/    
-我现在正在整理上面的题目,以此锻炼和提高提高自己的逻辑思维,解题能力.
+我现在正在整理上面的题目,以此锻炼和提高自己的逻辑思维,解题能力.
 ### Section String
 ##### 1. 题目:No426-恢复IP地址
->描述:给一个由数字组成的字符串。求出其可能恢复为的所有IP地址。
+>描述:给一个由数字组成的字符串。求出其可能恢复为的所有IP地址。    
 样例:给出字符串 "25525511135"，所有可能的IP地址为(顺序无关紧要)
     [
       "255.255.11.135",
@@ -113,3 +113,40 @@ public class Solution {
     }
 }
 ```
+
+
+### Section Integer
+##### 2. 题目:No413-反转整数
+>描述:将一个整数中的数字进行颠倒，当颠倒后的整数溢出时，返回 0 (标记为 32 位整数)。    
+样例:给定 x = 123，返回 321;给定 x = -123，返回 -321
+分析题目:
+输入:整型数字    
+输出:颠倒后的数字    
+条件:数字颠倒,如果越界返回0
+
+解题思路:
+一个简单的解决方法是,把输入字符串转化为字符串,通过StringBuilder()的reverse方法将字符串反转,
+需要注意的问题是如果是负数需要特殊处理'-'号,另外如果翻转后越界需要和Integer.MAX_VALUE
+比较看是否越界.    
+
+问题比较简单,代码如下:
+
+```java
+public int reverseInteger(int n) {
+    String result;
+    String str = String.valueOf(n);
+    if(str.contains("-")){
+        result = str.substring(1,str.length());
+        result = new StringBuilder(result).reverse().toString();
+        result = "-" + result;
+    }else{
+        result = new StringBuilder(str).reverse().toString();
+    }
+    long value = Long.valueOf(result);
+    if(value > Integer.MAX_VALUE){
+        return 0;
+    }
+    return (int) value;
+}
+```
+
