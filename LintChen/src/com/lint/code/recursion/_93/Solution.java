@@ -1,4 +1,4 @@
-package com.lint.code.recursion._93_;
+package com.lint.code.recursion._93;
 
 /**
  * Created by Kevin on 6/15/16.
